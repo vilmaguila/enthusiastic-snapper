@@ -1,5 +1,11 @@
 <template>
-  <h1>Hello everybody, this is /gurus and should show a list of gurus</h1>
+  <div>
+    <base-avenue>
+      <base-card>
+        <h1>Some text</h1>
+      </base-card>
+    </base-avenue>
+  </div>
 </template>
 
 <script>
