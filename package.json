@@ -11,7 +11,9 @@
     "lint": "yarn lint:js"
   },
   "dependencies": {
+    "@auth0/auth0-spa-js": "^1.15.0",
     "core-js": "^3.9.1",
+    "dotenv": "^10.0.0",
     "nuxt": "^2.15.3"
   },
   "devDependencies": {
