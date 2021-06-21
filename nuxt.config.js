@@ -23,7 +23,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: [],
+  plugins: ['~/plugins/auth-plugin.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
@@ -46,4 +46,10 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
+
+  // Environment variables
+  publicRuntimeConfig: {
+    AUTH0_DOMAIN: process.env.BASE_URL,
+    AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
+  },
 }
