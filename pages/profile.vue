@@ -1,5 +1,6 @@
 <template>
   <div>
+    <back-button label="Back"></back-button>
     <div>
       <img :src="$auth.user.picture" />
       <h2>{{ $auth.user.name }}</h2>
