@@ -1,14 +1,10 @@
 <template>
-  <nuxt-link v-if="nuxt" :to="to">
-    <div>
-      <slot />
-    </div>
+  <nuxt-link v-if="nuxt" tag="div" :to="to">
+    <slot />
   </nuxt-link>
-  <a v-else :href="to">
-    <div>
-      <slot />
-    </div>
-  </a>
+  <div v-else :href="to">
+    <slot />
+  </div>
 </template>
 
 <script>
@@ -31,6 +27,6 @@ export default {
 <style lang="postcss" scoped>
 div {
   @apply max-w-max p-2 m-1 bg-gray-200 rounded-lg text-3xl
-  hover:bg-gray-300;
+  hover:bg-gray-300 cursor-pointer;
 }
 </style>

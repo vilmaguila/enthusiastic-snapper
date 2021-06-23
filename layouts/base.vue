@@ -1,20 +1,18 @@
 <template>
   <div>
     <nav-bar>
-      <nav-bar-item>
-        <nuxt-link to="/"> Home </nuxt-link>
-      </nav-bar-item>
-      <nav-bar-item>
-        <nuxt-link to="/gurus"> Gurus </nuxt-link>
-      </nav-bar-item>
-      <nav-bar-item>
-        <nuxt-link to="/profile"> Profile </nuxt-link>
-      </nav-bar-item>
+      <nav-bar-item nuxt to="/"> Home </nav-bar-item>
+      <nav-bar-item nuxt to="/gurus"> Gurus </nav-bar-item>
+      <nav-bar-item nuxt to="/profile">Profile </nav-bar-item>
       <div v-if="!$auth.loading">
         <!-- show login when not authenticated -->
-        <button v-if="!$auth.isAuthenticated" @click="login">Log in</button>
+        <nav-bar-item v-if="!$auth.isAuthenticated" @click.native="login"
+          >Log in</nav-bar-item
+        >
         <!-- show logout when authenticated -->
-        <button v-if="$auth.isAuthenticated" @click="logout">Log out</button>
+        <nav-bar-item v-if="$auth.isAuthenticated" @click.native="logout"
+          >Log out</nav-bar-item
+        >
       </div>
     </nav-bar>
     <Nuxt />
