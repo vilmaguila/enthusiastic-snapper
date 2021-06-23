@@ -23,7 +23,7 @@ export default {
   css: [],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/auth-plugin.js'],
+  plugins: [],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: [
@@ -42,7 +42,7 @@ export default {
   ],
 
   // Modules: https://go.nuxtjs.dev/config-modules
-  modules: [],
+  modules: ['@nuxtjs/axios', '@nuxtjs/auth-next'],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {},
@@ -51,5 +51,19 @@ export default {
   publicRuntimeConfig: {
     AUTH0_DOMAIN: process.env.BASE_URL,
     AUTH0_CLIENT_ID: process.env.AUTH0_CLIENT_ID,
+  },
+
+  auth: {
+    strategies: {
+      auth0: {
+        domain: 'dev-aol5k71q.eu.auth0.com',
+        clientId: 'Gym5ubW5sKcwSMhc7fluitEHF4tDS4fg',
+      },
+    },
+    redirect: {
+      callback: '/',
+      login: '/login',
+    },
+    fullPathRedirect: true,
   },
 }
